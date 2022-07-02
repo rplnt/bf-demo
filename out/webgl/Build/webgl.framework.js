@@ -3373,6 +3373,7 @@ function _ClearBaseAddress() {
 }
 function _GetBaseAddress() {
  var addr = localStorage.getItem("NamiBaseAddress");
+ if (!addr) return "";
  var bufferSize = lengthBytesUTF8(addr) + 1;
  var buffer = _malloc(bufferSize);
  stringToUTF8(addr, buffer, bufferSize);
